@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!----------------- before remove var --------------------->
+    <!-- <script>console.log(number1);</script>  not defined -->
+    <!-- <script>console.log(number2);</script>  not defined -->
+    <!-- <script>console.log(number3);</script>  not defined -->
+    <!-- --------------- after remove var------------------------------------------- -->
+    <!-- <script>console.log(number1);</script>  not defined -->
+    <!-- <script>console.log(number2);</script>  not defined -->
+    <!-- <script>console.log(number3);</script>  not defined -->
+    <script src="./External.js"></script>
+    <!-- ----------------before remove var------------------------- -->
+    <!-- <script>console.log(number1);</script> 3 -->
+    <!-- <script>console.log(number2);</script> 2.9 -->
+    <!-- <script>console.log(number3);</script> 255 -->
+    <!-- --------------- after remove var------------------------------------------- -->
+    <!-- <script>console.log(number1);</script>  3 -->
+    <script>
+
+        
+        console.log("-------------------------------");
+        console.log(number1 + number2);            // 5.9
+        console.log(flag + number1);                // 4
+        console.log(firstName + flag);              // Ahmedtrue
+        console.log(number1 + firstName);           // 3Ahmed
+        console.log(number1 + number2 + firstName); // 5.9Ahmed
+        console.log(number1 + firstName + number2); // 3Ahmed2.9
+        console.log(number1 * flag);              //3 
+        console.log(number1 / lastName);             //  NaN
+        console.log(typeof NaN);
+
+        //  undefined null not defined 
+   
+    </script>
+    <!-- <script>console.log(number2)</script> -->
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Ahmed Ibrahim Abdelhamed</h1>
+</body>
+
+</html>
