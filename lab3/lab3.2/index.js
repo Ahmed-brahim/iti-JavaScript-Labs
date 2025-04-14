@@ -1,10 +1,9 @@
-// let nameArr = new Array();
-// for (let i = 0; i < 10; i++) 
-// {
-//     // Prompt the user to enter a name and convert it to lowercase
-//     nameArr[i] = prompt("Enter name " + (i + 1) + ": ").toLowerCase();
-// }
-let nameArr = ["Ahmed","mahmoud","ezat", "Ali", "Ali", "Ali", "Ahmed", "Ahmed", "Ali", "Ali", "Ahmed", "Ahmed"];
+let nameArr = new Array();
+for (let i = 0; i < 10; i++) 
+{
+    // Prompt the user to enter a name and convert it to lowercase
+    nameArr[i] = prompt("Enter name " + (i + 1) + ": ").toLowerCase();
+}
 let uniqueNames = [];
 for (let i = 0; i < nameArr.length; i++) {
     if (!uniqueNames.includes(nameArr[i])) {
