@@ -3,6 +3,7 @@ window.addEventListener('load', function() {
     let addButton = document.querySelector('#addButton');
     let taskList = document.querySelector('#taskList');
     let DoneBox = document.querySelectorAll('#DoneBox');
+    let counter = 0;
     addButton.addEventListener('click', function() {
         let taskText = taskInput.value;
         if (taskText) {
@@ -21,27 +22,30 @@ window.addEventListener('load', function() {
             tr.appendChild(td3);
             taskList.appendChild(tr);
             taskInput.value = '';
-            taskList.addEventListener('click', function(e) {
-                if (e.target.classList.contains('delete-btn')) {
-                    let tr = e.target.parentElement.parentElement;
-                    let ch = alert("want to delete?")
-                    if(ch){
-                        taskList.removeChild(tr);
-                    }
-                    
-                }
-                if(e.target.id == 'DoneBox'){
-                    console.log(e.target);
-                    if (e.target.checked) {
-                        e.target.parentElement.nextElementSibling.style.textDecoration = 'line-through';
-                    } else {
-                        e.target.parentElement.nextElementSibling.style.textDecoration = 'none';
-                    }
-                }
-            });
             } 
         else {
             alert('Please enter a task.');
+        }
+    });
+    taskList.addEventListener('click', function(e) {
+        console.log('entered table event conter = '+ counter);
+        counter++;
+        if (e.target.className == 'delete-btn') {
+            let tr = e.target.parentElement.parentElement;
+            let ch = confirm("want to delete?");
+            console.log(tr);
+            if(ch){
+                taskList.removeChild(tr);
+            }
+            
+        }
+        if(e.target.id == 'DoneBox'){
+            console.log(e.target);
+            if (e.target.checked) {
+                e.target.parentElement.nextElementSibling.style.textDecoration = 'line-through';
+            } else {
+                e.target.parentElement.nextElementSibling.style.textDecoration = 'none';
+            }
         }
     });
 }); //load end

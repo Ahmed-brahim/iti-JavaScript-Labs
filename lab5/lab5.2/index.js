@@ -14,7 +14,7 @@ window.addEventListener('load', () => {
                 imageDiv.src = `../images/${index}.jpg`;
                 index++;
                 if(index > 8) index = 1;
-            }, 1500);
+            }, 700);
         }
         else if(e.target.className == 'button-stop')
         {
