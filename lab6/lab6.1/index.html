@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Registration Form</title>
+  </head>
+  <body>
+    <form id="registrationForm">
+      <div class="form-group">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name" />
+        <div class="error" id="nameError"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="age">Enter your age:</label>
+        <input type="number" id="age" name="age" />
+        <div class="error" id="ageError"></div>
+      </div>
+
+      <div class="form-group">
+        <label>Select your Gender:</label>
+        <div class="gender">
+          <input type="radio" id="male" name="gender" value="male" />
+          <label for="male">
+            <img src="./man.PNG" alt="Male" />
+          </label>
+          <input type="radio" id="female" name="gender" value="female" />
+          <label for="female">
+            <img src="./girl.PNG" alt="Female" />
+          </label>
+        </div>
+        <div class="error" id="genderError"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="color">Select your favorite color:</label>
+        <select id="color" name="color">
+          <option value="red">Red</option>
+          <option value="green">Green</option>
+          <option value="blue">Blue</option>
+        </select>
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <script>
+      const form = document.getElementById("registrationForm");
+      const nameInput = document.getElementById("name");
+      const ageInput = document.getElementById("age");
+      const genderInputs = document.getElementsByName("gender");
+      const nameError = document.getElementById("nameError");
+      const ageError = document.getElementById("ageError");
+      const genderError = document.getElementById("genderError");
+
+      nameInput.addEventListener("blur", function () {
+        const nameRegex = /^[a-zA-Z\s]+$/;
+        if (!nameRegex.test(nameInput.value.trim())) {
+          nameError.textContent =
+            "Please enter a valid name (letters and spaces only).";
+        } else {
+          nameError.textContent = "";
+        }
+      });
+
+      ageInput.addEventListener("blur", function () {
+        const ageRegex = /^[1-9][0-9]*$/;
+        if (!ageRegex.test(ageInput.value.trim())) {
+          ageError.textContent =
+            "Please enter a valid age (positive numbers only).";
+        } else {
+          ageError.textContent = "";
+        }
+      });
+
+      form.addEventListener("submit", function (event) {
+        let genderSelected = false;
+        let flagError = false;
+
+        for (const input of genderInputs) {
+          if (input.checked) {
+            genderSelected = true;
+            break;
+          }
+        }
+
+        if (!genderSelected) {
+          genderError.textContent = "Please select a gender.";
+          flagError = true;
+        } else {
+          genderError.textContent = "";
+        }
+
+        const nameRegex = /^[a-zA-Z\s]+$/;
+        if (!nameRegex.test(nameInput.value.trim())) {
+          nameError.textContent =
+            "Please enter a valid name (letters and spaces only).";
+          flagError = true;
+        } else {
+          nameError.textContent = "";
+        }
+
+        const ageRegex = /^[1-9][0-9]*$/;
+        if (!ageRegex.test(ageInput.value.trim())) {
+          ageError.textContent =
+            "Please enter a valid age (positive numbers only).";
+          flagError = true;
+        } else {
+          ageError.textContent = "";
+        }
+
+        if (flagError) {
+          event.preventDefault();
+        } else {
+          // Store data in local storage
+          const formData = {
+            name: nameInput.value.trim(),
+            age: ageInput.value.trim(),
+            gender: genderSelected
+              ? document.querySelector('input[name="gender"]:checked').value
+              : "",
+            color: document.getElementById("color").value,
+          };
+          localStorage.setItem("formData", JSON.stringify(formData));
+
+          // Redirect to name.html
+          event.preventDefault();
+          console.log(window.location.href);
+          window.location.href = "name.html";
+        }
+      });
+    </script>
+  </body>
+</html>
