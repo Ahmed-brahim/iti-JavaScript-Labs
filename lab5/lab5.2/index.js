@@ -27,9 +27,10 @@ window.addEventListener('load', () => {
             console.log('next button clicked');
             clearInterval(intervalId);
             intervalId = null;
-            imageDiv.src = `../images/${index}.jpg`;
             index++;
             if(index > 8) index = 1;
+            imageDiv.src = `../images/${index}.jpg`;
+            
         }
         else if(e.target.className == 'button-prev')
         {

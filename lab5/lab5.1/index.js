@@ -24,7 +24,11 @@ window.addEventListener('load', function() {
             taskList.addEventListener('click', function(e) {
                 if (e.target.classList.contains('delete-btn')) {
                     let tr = e.target.parentElement.parentElement;
-                    taskList.removeChild(tr);
+                    let ch = alert("want to delete?")
+                    if(ch){
+                        taskList.removeChild(tr);
+                    }
+                    
                 }
                 if(e.target.id == 'DoneBox'){
                     console.log(e.target);
