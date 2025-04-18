@@ -1,0 +1,37 @@
+#container{
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background-image: url('./images/background.webp');
+    background-size: cover;       /* Fit and cover the entire area */
+  background-position: center;  /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+}
+#bird{
+    position: absolute;
+    width: 150px;
+}
+#cursor{
+    width: 80px;
+    position: absolute;
+    pointer-events: none; /* Prevent mouse events on the cursor */
+}
+#scoreBoard{
+    display: flex;
+    width: 15%;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 5px;
+    border-radius: 5px; /* Rounded corners */
+}
+button{
+    background-color: greenyellow;
+    width: 90px;
+    height: 50px;
+    margin: auto;
+}
