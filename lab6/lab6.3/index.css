@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    overflow: hidden;
+    
+
+}
+
+#gameArea {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #87d1ff;
+}
+
+#scoreBoard {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#basket {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+}
+
+.egg {
+    position: absolute;
+    width: 50px;
+    transition: top 0.1s linear;
+}
