@@ -11,7 +11,7 @@ gameArea.addEventListener('mousemove', (e) => {
 
 function createEgg() {
     const egg = document.createElement('img');
-    egg.src = '/images/egg.png';
+    egg.src = './images/egg.png';
     egg.className = 'egg';
     egg.style.left = Math.random() * (window.innerWidth - 50) + 'px';
     egg.style.top = '0px';
@@ -29,7 +29,7 @@ function createEgg() {
                 gameArea.removeChild(egg);
                 clearInterval(fallInterval);
             } else {
-                egg.src = '/images/brokenEgg.png';
+                egg.src = './images/brokenEgg.png';
                 score--;
                 scoreBoard.textContent = `Score: ${score}`;
                 setTimeout(() => {

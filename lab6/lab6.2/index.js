@@ -48,7 +48,8 @@ window.addEventListener("load", function () {
     // Function to spawn a new bird at a random position
     function createBird() {
         bird = document.createElement('img');
-        bird.src = './images/bird.gif';
+       // bird.src = './images/bird.gif';
+       bird.src = './images/kareem.png';
         bird.id = 'bird';
         bird.style.position = 'absolute';
 

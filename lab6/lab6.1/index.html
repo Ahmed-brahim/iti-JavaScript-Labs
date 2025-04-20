@@ -7,7 +7,7 @@
     <title>Registration Form</title>
   </head>
   <body>
-    <form id="registrationForm">
+    <form id="registrationForm" action="name.html" method="get">
       <div class="form-group">
         <label for="name">Enter your name:</label>
         <input type="text" id="name" name="name" />
@@ -127,9 +127,9 @@
           localStorage.setItem("formData", JSON.stringify(formData));
 
           // Redirect to name.html
-          event.preventDefault();
+         // event.preventDefault();
           console.log(window.location.href);
-          window.location.href = "name.html";
+         // window.location.href = "name.html";
         }
       });
     </script>
